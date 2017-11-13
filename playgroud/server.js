@@ -77,9 +77,10 @@ app.get('/users', (req, res) => {
       resultArray.push(doc);
     }, function () {
       db.close();
-      res.render('view', {
-        items: resultArray
-      });
+      // res.render('view', {
+      //   items: resultArray
+      // });
+      res.json(resultArray);
     });
   });
 });
@@ -143,9 +144,10 @@ app.get('/users/search', (req, res) => {
       if (err) throw err;
       console.log(result);
       db.close();
-      res.render('search', {
-        items: result
-      });
+      // res.render('search', {
+      //   items: result
+      // });
+      res.json(result);
     });
   });
 });
@@ -159,9 +161,10 @@ app.get('/users/role/:role', (req, res) => {
       if (err) throw err;
       console.log(result);
       db.close();
-      res.render('search', {
-        items: result
-      });
+      // res.render('search', {
+      //   items: result
+      // });
+      res.json(result);
     });
   });
 });
