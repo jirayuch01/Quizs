@@ -1,0 +1,23 @@
+{
+  "name": "playgroud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.0.1",
+    "mongodb": "^2.2.33",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

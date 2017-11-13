@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REST API Express + MongoDB</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="page">
+                    {{> header}}
+                    <h1>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <center>
+                            <b>Update Data</b>
+                        </center>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div id="content">
+                    <fieldset>
+                        <legend>User information</legend>
+                        <br>
+                        <form action="/save" method="post">
+                            <div class="form-group">
+                                <label for="studentID">studentID:</label>
+                                <input class="form-control" type="text" id="studentID" name="studentID" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">first name:&nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                <input class="form-control" type="text" id="firstname" name="firstname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">last name:&nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                <input class="form-control" type="text" id="lastname" name="lastname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">age:&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </label>
+                                <input class="form-control" type="text" id="age" name="age" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sex">sex: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                <input class="form-control" type="text" id="sex" name="sex" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="major">major: &nbsp;&nbsp; &nbsp;&nbsp;</label>
+                                <input class="form-control" type="text" id="major" name="major" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="faculty">faculty: &nbsp; &nbsp;</label>
+                                <input class="form-control" type="text" id="faculty" name="faculty" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">role: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <select class="form-control" id="role" name="role">
+                                    <option value="user">user</option>
+                                    <option value="admin">admin</option>
+                                </select>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </form>
+                    </fieldset>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        {{> footer}}
+    </div>
+</body>
+
+</html>

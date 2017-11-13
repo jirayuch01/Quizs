@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REST API Express + MongoDB</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="page">
+                    {{> header}}
+                    <h1>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <center>
+                            <b>Search Data</b>
+                        </center>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div id="content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>studentID</th>
+                                <th>firstname</th>
+                                <th>lastname</th>
+                                <th>age</th>
+                                <th>sex</th>
+                                <th>major</th>
+                                <th>faculty</th>
+                                <th>role</th>
+                            </tr>
+                        </thead>
+                        {{# each items }}
+                        <tbody>
+                            <tr>
+                                <td>{{ this.studentID }}</td>
+                                <td>{{ this.firstname }}</td>
+                                <td>{{ this.lastname }}</td>
+                                <td>{{ this.age }}</td>
+                                <td>{{ this.sex }}</td>
+                                <td>{{ this.major }}</td>
+                                <td>{{ this.faculty }}</td>
+                                <td>{{ this.role }}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        {{> footer}}
+    </div>
+</body>
+
+</html>

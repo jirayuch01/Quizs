@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REST API Express + MongoDB</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="page">
+                    {{> header}}
+                    <h1>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <center>
+                            <b>{{welcomeMessage}}</b>
+                        </center>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div id="content">
+                    <fieldset>
+                        <legend>Information Service</legend>
+                        <form action="/users/search" method="get">
+                            <br>
+                            <div class="form-group">
+                                <label for="fname">Search First Name:</label>
+                                <input type="text" class="form-control" id="fname" name="fname" placeholder="Search..." required>
+                                <br>
+                                <button type="submit" class="btn btn-warning">Search</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                    <fieldset>
+                        <br>
+                        <div class="form-group">
+                            <label for="role">Sort role by:</label>
+                            <select class="form-control" id="role" name="role">
+                                <option value="user">user</option>
+                                <option value="admin">admin</option>
+                            </select>
+                            <br>
+                            <button type="submit" id="btnsubmit" name="btnsubmit" class="btn btn-warning">Search</button>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>User action</legend>
+                        <br>
+                        <label for="add">
+                            <span>&nbsp;</span>
+                            <a href="/add">
+                                <input type="submit" value="Add" class="btn btn-primary">
+                            </a>
+                        </label>
+                        <label for="view">
+                            <span>&nbsp;</span>
+                            <a href="/users">
+                                <input type="submit" value="View" class="btn btn-success">
+                            </a>
+                        </label>
+                        <label for="update">
+                            <span>&nbsp;</span>
+                            <a href="/update">
+                                <input type="submit" value="Update" class="btn btn-info">
+                            </a>
+                        </label>
+                        <label for="delete">
+                            <span>&nbsp;</span>
+                            <a href="/delete">
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </a>
+                        </label>
+                    </fieldset>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        {{> footer}}
+    </div>
+    <script src="bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var searchRole = $('#role').val();
+            $('#role').change(function () {
+                searchRole = $(this).val();
+            });
+
+            $('#btnsubmit').click(function () {
+                window.location.href = "/users/role/" + searchRole;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
